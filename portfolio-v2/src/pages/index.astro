@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectsIsland from '../components/ProjectsIsland.astro';
+import ExperienceTimeline from '../components/ExperienceTimeline.astro';
+import SkillsGrid from '../components/SkillsGrid.astro';
+import RecommendationsCarousel from '../components/RecommendationsCarousel.astro';
+import WorkedWith from '../components/WorkedWith.astro';
+
+import '../styles/global.css'; 
+---
+
+<html lang="en">
+  <body>
+    <BaseLayout title="peppy's portfolio">
+      <Header />
+      <section id="about" class="about-section reveal">
+        <div class="profile-circle">
+          <img src="/portfolio/peppy.png" alt="peppy profile" class="profile-image" loading="lazy" />
+        </div>
+        <div>
+          <h2 class="section-title accent">About Me</h2>
+          <p class="section-desc">Build, Moderate and Manage Communities</p>
+        </div>
+      </section>
+      <section id="projects" class="projects-section reveal">
+        <h2 class="section-title accent">Projects</h2>
+        <ProjectsIsland />
+      </section>
+      <section id="experience" class="experience-section reveal">
+        <h2 class="section-title accent">Work Experience</h2>
+        <ExperienceTimeline />
+      </section>
+      <section id="skills" class="skills-section reveal">
+        <h2 class="section-title accent">Skills</h2>
+        <SkillsGrid />
+      </section>
+      <section id="recommendations" class="recommendations-section reveal">
+        <h2 class="section-title accent">Recommendations</h2>
+        <RecommendationsCarousel />
+      </section>
+      <section id="worked-with" class="worked-with-section reveal">
+        <h2 class="section-title accent">Companies I've Worked With</h2>
+        <WorkedWith />
+      </section>
+      <Footer />
+    </BaseLayout>
+  </body>
+</html>

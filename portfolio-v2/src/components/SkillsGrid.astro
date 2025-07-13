@@ -1,0 +1,82 @@
+---
+const skillCategories = [
+  {
+    label: 'Moderation & Community',
+    skills: [
+      { name: 'Online Moderation', icon: 'shield', color: '#6366f1', fallback: '🛡️' },
+      { name: 'Online Content Moderation', icon: 'eye', color: '#3b82f6', fallback: '👁️' },
+      { name: 'Online Community Moderation', icon: 'users', color: '#10b981', fallback: '👥' },
+      { name: 'Content Administration', icon: 'file-text', color: '#8b5cf6', fallback: '📄' },
+      { name: 'Community Management', icon: 'community', color: '#4ade80', fallback: '🌐' },
+      { name: 'Advocate', icon: 'megaphone', color: '#f59e0b', fallback: '📢' }
+    ]
+  },
+  {
+    label: 'Support & Testing',
+    skills: [
+      { name: 'Customer Support', icon: 'headphones', color: '#3b82f6', fallback: '🎧' },
+      { name: 'Customer Service', icon: 'user', color: '#22d3ee', fallback: '🙋' },
+      { name: 'Technical Support', icon: 'cpu', color: '#0ea5e9', fallback: '🖥️' },
+      { name: 'Support', icon: 'life-buoy', color: '#06b6d4', fallback: '🛟' },
+      { name: 'Bug Hunting', icon: 'bug', color: '#f43f5e', fallback: '🐞' },
+      { name: 'Bug Tracking', icon: 'search', color: '#f97316', fallback: '🔍' },
+      { name: 'Software Testing', icon: 'flask', color: '#f87171', fallback: '🧪' },
+      { name: 'System Testing', icon: 'terminal', color: '#eab308', fallback: '🧰' },
+      { name: 'Playtesting', icon: 'gamepad', color: '#7c3aed', fallback: '🎮' }
+    ]
+  },
+  {
+    label: 'Communication & Soft Skills',
+    skills: [
+      { name: 'Communication', icon: 'message-circle', color: '#14b8a6', fallback: '💬' },
+      { name: 'Management', icon: 'briefcase', color: '#facc15', fallback: '📊' },
+      { name: 'Coder', icon: 'code', color: '#16a34a', fallback: '👨‍💻' }
+    ]
+  },
+  {
+    label: 'Languages',
+    skills: [
+      { name: 'English', icon: 'flag', color: '#60a5fa', fallback: '🇬🇧' },
+      { name: 'German', icon: 'flag', color: '#f87171', fallback: '🇩🇪' },
+      { name: 'Dutch', icon: 'flag', color: '#fbbf24', fallback: '🇳🇱' }
+    ]
+  },
+  {
+    label: 'Tech & Development',
+    skills: [
+      { name: 'Software Development', icon: 'settings', color: '#4f46e5', fallback: '💻' }
+    ]
+  },
+  {
+    label: 'Business & Finance',
+    skills: [
+      { name: 'Finance', icon: 'bar-chart', color: '#10b981', fallback: '💹' },
+      { name: 'Stock Market', icon: 'trending-up', color: '#0ea5e9', fallback: '📈' }
+    ]
+  }
+];
+
+---
+<section class="skills">
+  {skillCategories.map(category => (
+    <div class="skill-category">
+      <h3 class="category-label">{category.label}</h3>
+      <div class="skills-grid">
+        {category.skills.map(skill => (
+          <div class="skill-card" style={`--brand: ${skill.color ?? '#A3E635'}`}>
+            <div class="skill-icon">
+              {skill.icon && !skill.fallback ? (
+                <i class={`devicon-${skill.icon}-plain`} aria-hidden="true" />
+              ) : (
+                <span class="fallback-icon" title={skill.name}>{skill.fallback}</span>
+              )}
+            </div>
+            <div class="skill-info">
+              <span class="skill-name">{skill.name}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</section>
